@@ -1,0 +1,728 @@
+:root {
+    --primary: #00acc1;        
+    --primary-2: #00838f;       
+    --bg: #ffffff;
+    --bg-2: #e0f7fa;            
+    --text: #333333;
+    --text-light: #666666;
+    --muted: #6c757d;
+    --card: #ffffff;
+    --shadow: 0 5px 15px rgba(0, 172, 193, 0.1);
+    --dark-bg: #006064;         
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg), var(--bg-2));
+    color: var(--text);
+    line-height: 1.6;
+}
+
+p, .lead { 
+    color: var(--text-light); 
+}
+
+.text-muted { 
+    color: var(--muted) ; 
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    padding: 0.8rem 0;
+    background-color: white ;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text) ;
+    padding: 0.5rem 1rem ;
+    margin: 0 0.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary) ;
+}
+
+.brand-icon {
+    color: var(--primary);
+}
+
+.brand-name {
+    color: var(--text);
+}
+
+.hero {
+    min-height: 80vh;
+    background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn-light {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 2.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.hero .btn-light:hover {
+    background-color: var(--primary-2);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-top: 1.5rem;
+}
+
+#menu {
+    background-color: var(--bg-2);
+    padding: 5rem 0;
+}
+
+.menu-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.menu-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary);
+    border-radius: 2px;
+}
+
+.menu-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-top: 1.5rem;
+}
+
+.menu-card {
+    border: none !important;
+    border-radius: 15px !important;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    height: 100%;
+    background: white;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.menu-card-img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-card:hover .menu-card-img {
+    transform: scale(1.05);
+}
+
+.menu-card-body {
+    padding: 1.5rem;
+}
+
+.menu-card-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+.menu-card-text {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.menu-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.menu-card-price {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.menu-card-btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu-card-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+
+#destinations {
+    background-color: white;
+    padding: 5rem 0;
+}
+
+.destination-card {
+    border: none !important;
+    border-radius: 15px !important;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    height: 100%;
+    background: white;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.destination-card-img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.destination-card:hover .destination-card-img {
+    transform: scale(1.05);
+}
+
+.destination-card-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+.destination-card-text {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.destination-price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.destination-btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.destination-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+
+#apropos {
+    background-color: white;
+    padding: 5rem 0;
+}
+
+.apropos-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.apropos-divider {
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary);
+    margin-bottom: 2rem;
+    border-radius: 2px;
+}
+
+.apropos-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.apropos-highlight {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.apropos-check-icon {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.apropos-feature-text {
+    font-weight: 500;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.apropos-btn {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 30px;
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 87, 51, 0.3);
+    display: inline-flex;
+    align-items: center;
+}
+
+.apropos-btn:hover {
+    background-color: var(--primary-2);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 87, 51, 0.4);
+}
+
+.apropos-btn i {
+    transition: transform 0.3s ease;
+}
+
+.apropos-btn:hover i {
+    transform: translateX(5px);
+}
+
+
+#voyages {
+    background-color: var(--bg-2);
+    padding: 5rem 0;
+}
+
+.voyage-accordion-item {
+    border: none !important;
+    margin-bottom: 1rem;
+    border-radius: 10px !important;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.accordion-button {
+    font-weight: 600;
+    color: var(--text) !important;
+    background-color: white !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--primary) !important;
+    background-color: rgba(255, 87, 51, 0.05) !important;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(255, 87, 51, 0.3);
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff5733'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-icon {
+    color: var(--primary);
+}
+
+.voyage-price {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.voyage-details-btn {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    padding: 0.4rem 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.voyage-details-btn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* ===== BOUTONS PRIMAIRES ===== */
+.btn-primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-2) !important;
+    border-color: var(--primary-2) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+.btn-outline-primary {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    border-radius: 25px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+/* ===== SECTION CONTACT ===== */
+.contact-section {
+    background-color: var(--bg-2);
+    padding: 5rem 0;
+}
+
+.contact-map {
+    height: 400px;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255, 87, 51, 0.15);
+    outline: none;
+}
+
+.form-feedback {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.form-success {
+    color: #28a745;
+    font-size: 0.875rem;
+}
+
+
+.contact-info-title {
+    color: var(--text);
+}
+
+.contact-icon {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+
+footer {
+    background-color: var(--dark-bg);
+    color: white;
+    padding: 3rem 0;
+}
+
+footer h5 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary);
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+footer hr {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+}
+
+
+.footer-icon {
+    color: var(--primary);
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: var(--primary);
+}
+
+.social-icon {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--primary);
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-hr {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+@media (max-width: 991px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .menu-title {
+        font-size: 2.5rem;
+    }
+    
+    .apropos-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 60vh;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .menu-title {
+        font-size: 2.2rem;
+    }
+    
+    .menu-card-footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .menu-card-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .destination-card-footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .destination-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .apropos-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .apropos-divider {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .apropos-description {
+        text-align: center;
+    }
+    
+    .col-6 .d-flex {
+        justify-content: center;
+    }
+    
+    .apropos-btn {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .menu-title {
+        font-size: 2rem;
+    }
+    
+    .menu-card-img {
+        height: 200px;
+    }
+    
+    .destination-card-img {
+        height: 200px;
+    }
+    
+    .contact-map {
+        height: 300px;
+    }
+}
